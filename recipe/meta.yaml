@@ -1,13 +1,14 @@
 {% set name = "tox-conda" %}
-{% set version = "0.2.1" %}
-{% set sha256 = "ee0a1c84aa2386ef92a85fba39b1578d0e464758b33becb2d1402b371a075c40" %}
+{% set version = "0.4.1" %}
+{% set sha256 = "757e65938ea0ecd0fe7089a25e4f87b5ff3d8788bff74e2e19386b589bee4433" %}
+
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/tox_conda-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
@@ -17,10 +18,10 @@ build:
 
 requirements:
   host:
-    - python >3.3
+    - python >=3.5
     - pip
   run:
-    - python >3.3
+    - python >=3.5
     - tox >=3.8.1
 
 test:
@@ -32,10 +33,11 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: 'Make tox cooperate with conda envs'
+  summary: tox plugin that provides integration with conda
   doc_url: https://github.com/tox-dev/tox-conda
   dev_url: https://github.com/tox-dev/tox-conda
 
 extra:
   recipe-maintainers:
     - njzjz
+    - ickc
