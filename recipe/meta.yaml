@@ -22,7 +22,7 @@ requirements:
     - pip
   run:
     - python >=3.5
-    - tox >=3.8.1
+    - tox >=3.8.1,<4
 
 test:
   imports:
