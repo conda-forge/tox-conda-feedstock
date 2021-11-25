@@ -18,10 +18,10 @@ build:
 
 requirements:
   host:
-    - python >=3.5
+    - python
     - pip
   run:
-    - python >=3.5
+    - python
     - tox >=3.8.1,<4
 
 test:
