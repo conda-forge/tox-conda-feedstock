@@ -1,6 +1,6 @@
 {% set name = "tox-conda" %}
-{% set version = "0.9.0" %}
-{% set sha256 = "306ad28d93d22bfd33ef2af5ee916cb15e6748ec1a5b9930d5aa4d2fbd5f12f4" %}
+{% set version = "0.9.1" %}
+{% set sha256 = "6fe45da8c226477e08bc48a8a745c527606186cfcaaf6124571bb35082d86421" %}
 
 
 package:
