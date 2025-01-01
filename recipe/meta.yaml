@@ -8,25 +8,28 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/tox_conda-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/tox_conda-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
-    - python >=3.5
+    - python {{ python_min }}
     - pip
+    - setuptools
     - setuptools_scm
   run:
-    - python >=3.5
+    - python >={{ python_min }}
     - tox >=3.8.1,<4
     - ruamel.yaml >=0.15.0,<0.18
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - tox_conda.plugin
 
